@@ -1,6 +1,5 @@
 import random
 
-
 def get_word(data, mode=1):
     '''
     Func that returns word from given data
