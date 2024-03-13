@@ -10,6 +10,11 @@ def read_load_json_file(filename, page_number):
     '''
     with open(filename, 'r') as file:
         data = json.load(file)
-    page = f'page{page_number}'
-
-    return data[page]
+    return_data = []
+    if type(page_number) == list:
+        for p in page_number:
+            page = f'page{p}'
+            return_data.extend(data[page])
+        return return_data
+    else:
+        return data[f'page{page_number}']
