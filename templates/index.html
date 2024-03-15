@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #main {
+            width: 600px;
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 35px auto;
+        }
+
+        #user_choice {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #page_input {
+            width: 170px;
+            padding: 5px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+
+        #eng_to_arm_div, #arm_to_eng_div {
+            display: flex;
+            gap: 3px;
+        }
+
+        #eng_to_arm_div > input, #arm_to_eng_div > input, #eng_to_arm_div > label, #arm_to_eng_div > label {
+            cursor: pointer;
+        }
+
+        #button_div {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #button_div > button {
+            width: 100px;
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #words {
+            width: 500px;
+            padding: 10px;
+            margin: 30px auto;
+            border: 1px solid;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #translation {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="user_choice">
+            <input type="text" placeholder="Select page/pages" id="page_input">
+            <div id="eng_to_arm_div">
+                <input type="radio" id="eng_to_arm" value="eng_to_arm" name="language">
+                <label for="eng_to_arm"> English to Armenian</label>
+            </div>
+            <div id="arm_to_eng_div">
+                <input type="radio" id="arm_to_eng" value="arm_to_eng" name="language">
+                <label for="arm_to_eng"> Armenian to English</label>
+            </div>
+        </div>
+        <div id="button_div">
+            <button id="get_word">Get Word</button>
+            <button id="translate">Translate</button>
+        </div>
+        <div id="words">
+            <span id="word">Word</span>
+            <span id="translation">Translation</span>
+        </div>
+    </div>
+    <script>
+        document.getElementById('get_word').addEventListener('click', function () {
+            var page = document.getElementById('page_input').value;
+            var language = document.querySelector('input[name="language"]:checked').value;
+            var translation = document.getElementById('translation');
+            translation.style.display = 'none';
+
+            fetch('/get_word', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    page: page,
+                    language: language
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('word').innerText = data.word;
+                document.getElementById('translation').innerText = data.translation;
+            });
+        });
+
+        document.getElementById('translate').addEventListener('click', function () {
+            var translation = document.getElementById('translation');
+            translation.style.display = translation.style.display === 'none' ? 'inline' : 'none';
+        });
+    </script>
+</body>
+</html>
