@@ -13,7 +13,8 @@ def read_load_json_file(filename, page_numbers):
 
     return_data = {}
 
-    if isinstance(page_numbers, list):
+    if isinstance(page_numbers, str):
+        page_numbers = page_numbers.split(',')
         for page_number in page_numbers:
             page_key = f'page{page_number}'
             if page_key in data:

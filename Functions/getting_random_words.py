@@ -4,7 +4,7 @@ def get_word(data, mode=1):
     '''
     Func that returns word from given data
     :param data: Json format data
-    :param mode: 1 For English to Armenian, 2 For Armenian to English
+    :param mode: 1 For English to Armenian, 0 For Armenian to English
     :return: pair of words to be displayed
     '''
     words_to_give = list(data.keys())
