@@ -13,5 +13,11 @@ def getting_started():
 
     return pages
 
+def select_mode():
+    mode = input("(0) If you want Armenian to English\n(1) If you want English To Armenian: ")
+    while int(mode) not in [0,1]:
+        mode = input("(0) If you want Armenian to English\n(1) If you want English To Armenian: ")
+    return mode
+
 if __name__=='__main__':
     print(getting_started())
