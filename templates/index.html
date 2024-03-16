@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Studying English</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
         }
+
         body{
             width: 100%;
-            height: 100vh;
-            background-image: linear-gradient(45deg, #e6e8ed,#b1b3b7);
-            background-repeat: no-repeat;
-            background-size: cover;
+            height: 100dvh;
+            background: linear-gradient(45deg, #898a8d,#d0d2d6);
+            font-size: 16px;
+            margin: 0;
+            padding: 24px;
         }
+
         #main {
-            width: 600px;
+            width: 75%;
+            padding: 10px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             border: 1px solid;
             border-radius: 10px;
-            padding: 10px;
-            margin: 35px auto;
             background-color: #3f3d3f;
         }
 
         #user_choice {
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
+            gap: 20px;
             color: #e7e7e7;
         }
 
@@ -54,7 +60,6 @@
         }
 
         #button_div {
-            margin-top: 30px;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -73,10 +78,10 @@
         }
 
         #words {
-            width: 500px;
+            width: 50%;
             height: 60px;
             padding: 10px;
-            margin: 30px auto;
+            margin: 0 auto;
             border: 1px solid;
             border-radius: 5px;
             display: flex;
@@ -88,6 +93,17 @@
 
         #translation {
             display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+                padding-top: 30%;
+            }
+
+            #main {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -114,13 +130,12 @@
         </div>
     </div>
     <script>
-        document.getElementById('get_word').addEventListener('click', function () {
-            var page = document.getElementById('page_input').value;
-            var language = document.querySelector('input[name="language"]:checked').value;
-            var translation = document.getElementById('translation');
+        document.getElementById('get_word').addEventListener('click', () => {
+            const page = document.getElementById('page_input').value;
+            const language = document.querySelector('input[name="language"]:checked').value;
+            const translation = document.getElementById('translation');
             translation.style.display = 'none';
-
-            fetch('/get_word', {
+fetch('/get_word', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -137,8 +152,8 @@
             });
         });
 
-        document.getElementById('translate').addEventListener('click', function () {
-            var translation = document.getElementById('translation');
+        document.getElementById('translate').addEventListener('click',  () => {
+            const translation = document.getElementById('translation');
             translation.style.display = translation.style.display === 'none' ? 'inline' : 'none';
         });
     </script>
