@@ -921,6 +921,54 @@
         "obvious": "ակնհայտ",
         "discernible": "նկատելի (заметный)",
         "vague": "անորոշ, ոչ հստակ"
-  }
+  },
+  "page42": {
+        "distinctive": "տարբերակիչ, տարբերվող",
+        "necessary attitude": "անհրաժեշտ վերաբերմունք",
+        "supplement": "լրացում, դաբավկա",
+        "precisely": "հենց այդպես, ճշգրիտ",
+        "complacency": "ինքնագոհություն",
+        "shrug off": "իրանց վրայից քցել",
+        "sinful": "մեղավոր",
+        "emphasis": "շեշտ, շեշտադրում",
+        "constant threat of complete annihilation": "լիակատար ոչնչացման մշտական սպառնալիք",
+        "glorious heritage": "փառավոր ժառանգություն",
+        "sanity": "խելամտություն, ողջախոհություն",
+        "spotless": "անհետք, անթերի, անբիծ",
+        "turn to": "դիմել",
+        "shed": "մի կողմ նետել",
+        "inhibition": "արգելք",
+        "complain": "բողոքել",
+        "to insist on": "պնդել",
+        "to be addicted to": "կախվածություն ունենալ",
+        "to be accustomed to": "սովոր լինել",
+        "to accuse of": "մեղադրել"
+
+  },
+  "page43": {
+        "reign": "թագավորել,տիրել",
+        "successor": "հաջորդ, ժառանգ, փոխարինող",
+        "carve": "քանդակել, փորագրել",
+        "chariot": "կառք",
+        "dagger": "դաշույն, կինժալ",
+        "precious": "թանկարժեք",
+        "label": "պիտակ, բիռկա, էտիկետկա",
+        "preserve": "պահպանել",
+        "coffin": "դագաղ",
+        "moisture": "խոնավություն",
+        "decay": "քայքայվել",
+        "clues": "հուշումներ",
+        "reunite": "վերամիավորվել",
+        "embalmer": "զմռսող",
+        "embalm": "զմռսել",
+        "arose": "առաջանալ",
+        "bank of river": "գետի ափ",
+        "priest": "քահանա",
+        "conquer": "նվաճել",
+        "divorce": "ամուսնալուծություն",
+        "scribe": "գրագիր, դպիր",
+        "chores": "տնային գործեր",
+        "clay stove": "կավե վառարան"
+}
 
 }
