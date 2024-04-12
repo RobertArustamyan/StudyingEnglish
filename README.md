@@ -11,7 +11,7 @@ This is a web application for learning English vocabulary through random word se
 ## Features
 
 ---
-- Select a page/pages from a data.json (42 is last).
+- Select a page/pages from a data.json (43 is last).
 - Choose translation mode (English to Armenian or Armenian to English).
 - Fetch random words for learning.
 - Toggle translation display.
