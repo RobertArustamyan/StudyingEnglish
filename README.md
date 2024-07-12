@@ -15,7 +15,7 @@ This is a web application for learning English vocabulary through random word se
 - Choose translation mode (English to Armenian or Armenian to English).
 - Fetch random words for learning.
 - Toggle translation display.
-- **Words update every 2 weeks**
+- **Words update every 2 weeks** (Freezed)
 
 ## Technologies Used
 
